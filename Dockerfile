@@ -1,5 +1,11 @@
 FROM --platform=linux/amd64 python:3.10-bullseye
 
+LABEL org.opencontainers.image.source=https://github.com/rust-lang/docker-rust
+
+ENV RUSTUP_HOME=/usr/local/rustup \
+    CARGO_HOME=/usr/local/cargo \
+    PATH=/usr/local/cargo/bin:$PATH 
+
 RUN dpkg --add-architecture arm64 \
     && dpkg --add-architecture armhf
 
