@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
-          push: ${{ github.event_name != 'pull_request' }}
+          push: true
           tags: tomvictor/pyo3:latest
 
       - name: Generate artifact attestation
@@ -56,4 +56,4 @@ jobs:
         with:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
-          push-to-registry: ${{ github.event_name != 'pull_request' }}
+          push-to-registry: true
