@@ -1,6 +1,7 @@
 FROM --platform=linux/amd64 python:3.10-bullseye
 
 LABEL org.opencontainers.image.source=https://github.com/tomvictor/pyo3
+LABEL org.opencontainers.image.description=Pyo3-Builder
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
