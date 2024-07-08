@@ -24,9 +24,7 @@ RUN apt-get update &&  apt-get -y install \
 
 #Rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain 1.79.0 -y
-RUN echo $PATH
 RUN export PATH="$PATH:$HOME/.cargo/bin"
-RUN echo $PATH
 RUN rustup target add aarch64-unknown-linux-gnu
 RUN rustup component add rustfmt && rustup component add clippy
 

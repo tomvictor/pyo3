@@ -49,7 +49,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: tomvictor/pyo3:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
 
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
