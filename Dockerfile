@@ -21,5 +21,5 @@ RUN apt-get update &&  apt-get -y install \
     libssl-dev:arm64 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN rustup target add aarch64-unknown-linux-gnu
-RUN rustup component add rustfmt && rustup component add clippy
+# RUN rustup target add aarch64-unknown-linux-gnu
+# RUN rustup component add rustfmt && rustup component add clippy
